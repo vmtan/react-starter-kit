@@ -32,18 +32,6 @@ module.exports = {
   },
 
   rules: {
-    // `js` and `jsx` are common extensions
-    // `mjs` is for `universal-router` only, for now
-    'import/extensions': [
-      'error',
-      'always',
-      {
-        js: 'never',
-        jsx: 'never',
-        mjs: 'never',
-      },
-    ],
-
     // Not supporting nested package.json yet
     // https://github.com/benmosher/eslint-plugin-import/issues/458
     'import/no-extraneous-dependencies': 'off',
@@ -66,9 +54,7 @@ module.exports = {
     // Allow js files to use jsx syntax, too
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
 
-    // Automatically convert pure class to function by
-    // babel-plugin-transform-react-pure-class-to-function
-    // https://github.com/kriasoft/react-starter-kit/pull/961
+    // Hot module replacement does not work with stateless functional components
     'react/prefer-stateless-function': 'off',
 
     // ESLint plugin for prettier formatting
